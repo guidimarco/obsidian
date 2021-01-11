@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 68px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 6.8px;
+}
+
+h2 {
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 13px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+div.hidden-list {
+    display: none;
+}
+
+.dropdown-li:hover div.hidden-list {
+    display: block;
+    animation: underline 1s
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* DIV: BACKGROUND INIZIO */
+/* ----------------------------------- */
+/* ----------------------------------- */
+#wrapper {
+    background-image: url("https://demo.audiotheme.com/wp-content/uploads/sites/15/2015/04/background-18.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.65;
+}
+
+/* DIV: HEADER INIZIO */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+
+/* DIV: NAV INIZIO */
+/* ----------------------------------- */
+.top-nav ul {
+    text-align: center;
+}
+
+.top-nav li {
+    display: inline-block;
+}
+
+.top-nav a {
+    color: #fff;
+    background-color: transparent;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 60px;
+    padding: 0 20px;
+    opacity: 0.65;
+}
+
+.top-nav > ul > li > a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.top-nav a.current-page {
+    font-weight: 700;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+
+/* lista nascosta */
+.top-nav li.dropdown-li {
+    position: relative;
+    z-index: 1;
+}
+
+.top-nav div.hidden-list {
+    width: max-content;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.top-nav div.hidden-list::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.top-nav div.hidden-list li {
+    display: block;
+    text-align: left;
+    text-transform: none;
+    border-bottom: 1px solid gray;
+}
+
+.top-nav a {
+    border-radius: 10px;
+}
+
+.top-nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.top-nav div.hidden-list a {
+    width: 100%;
+}
+
+.top-nav div.hidden-list a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.top-nav div.hidden-list li:last-child {
+    border-bottom: none;
+}
+
+
+
+/* DIV: SECTION.TITLE INIZIO */
+/* ----------------------------------- */
+section.title {
+    height: calc(100vh - 60px);
+    position: relative
+}
+
+section.title div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    animation: scale 2s 1s 2 alternate;
+}
+
+@keyframes scale {
+    0% {
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(1.25);
+    }
+}
+
+section.title div p {
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+
+
+
+/* DIV: HEADER FINE */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+/* DIV: MAIN INIZIO */
+/* ----------------------------------- */
+/* ----------------------------------- */
+section#recent-videos {
+    font-size: 13px;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.recent-videos-stack {
+    border-bottom: 1px solid white;
+}
+
+.recent-video-title {
+    border-bottom: 1px solid white;
+}
+
+/* div superiore dx e sx */
+.recent-video-title .float-left {
+    width: 50%;
+}
+
+/* div superiore solo dx */
+.recent-video-title .float-left:nth-child(2) {
+    text-align: right;
+}
+
+/* box interni con video */
+.recent-videos-stack .box {
+    width: calc(100% / 3);
+    border-left: 1px solid white;
+    padding: 20px;
+}
+
+.recent-videos-stack .box:first-child {
+    border-left: none;
+}
+
+.box img {
+    position: relative;
+    width: 100%;
+    filter: grayscale(100%);
+    transition: all 2s;
+}
+
+.box img:hover {
+    filter: grayscale(0%);
+    /* animation: rotate 4s linear 0s 2 alternate; */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section#upcoming-gig {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 100px;
+}
+
+#upcoming-gig .title {
+    border-bottom: 1px solid white;
+}
+
+#upcoming-gig a.row {
+    display: block;
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+    transition: all 1s;
+}
+
+#upcoming-gig a.row:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.upcoming-date {
+    width: 15%;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+
+.upcoming-date .data {
+    font-size: 21px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.upcoming-city {
+    width: 45%;
+    padding: 0 10px;
+}
+
+.upcoming-pub {
+    width: 40%;
+    padding: 0 10px;
+}
+
+
+
+
+/* DIV: FOOTER INIZIO */
+/* ----------------------------------- */
+/* ----------------------------------- */
+footer {
+    background-color: white;
+    height: 100px;
+}
